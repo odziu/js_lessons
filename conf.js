@@ -5,7 +5,7 @@ exports.config = {
       capabilities: {
           'browserName': 'chrome'
       },
-      specs: ['calc.js'],
+      specs: ['spec.js'],
       framework: 'jasmine2' ,
       onPrepare: function() {
           let jasmineReporters = require('jasmine-reporters');

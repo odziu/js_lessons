@@ -1,0 +1,22 @@
+{
+  "name": "js_lessons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "conf.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odziu/js_lessons.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/odziu/js_lessons/issues"
+  },
+  "homepage": "https://github.com/odziu/js_lessons#readme",
+  "devDependencies": {
+    "jasmine-reporters": "^2.0.0"
+  }
+}
