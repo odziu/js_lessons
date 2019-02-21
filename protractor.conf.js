@@ -1,8 +1,7 @@
-// require('ts-node').register();
+require('ts-node').register();
 
-exports.config = {
-      // seleniumAddress: 'http://localhost:4444/wd/hub',
-      baseUrl: 'http://movies-finder.firebaseapp.com/',
+module.exports.config = {
+      baseUrl: 'http://movies-finder.firebaseapp.com/', // you can set your URL globally
       SELENIUM_PROMISE_MANAGER: false, // but we still use this piece of shit
       capabilities: {
           'browserName': 'chrome'
