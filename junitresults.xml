@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="Protractor searching" timestamp="2019-02-22T16:19:18" hostname="localhost" time="2.402" errors="0" tests="1" skipped="0" failures="0">
-  <testcase classname="Protractor searching" name="should calculate the sum of two numbers" time="2.399">
+ <testsuite name="browserName" timestamp="2019-02-24T14:35:47" hostname="localhost" time="1.574" errors="0" tests="3" skipped="0" failures="0">
+  <testcase classname="browserName" name="can switch to iframe" time="1.567">
+  </testcase>
+  <testcase classname="browserName" name="can open URLs" time="0">
+  </testcase>
+  <testcase classname="browserName" name="can fork new driver instance" time="0">
   </testcase>
  </testsuite>
- <testsuite name="browserName" timestamp="2019-02-22T16:19:20" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
-  <testcase classname="browserName" name="can open URLs" time="0.001">
+ <testsuite name="Protractor searching" timestamp="2019-02-24T14:35:49" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+  <testcase classname="Protractor searching" name="should calculate the sum of two numbers" time="0">
   </testcase>
  </testsuite>
 </testsuites>
