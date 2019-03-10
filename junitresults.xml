@@ -1,15 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="browserName" timestamp="2019-02-24T14:35:47" hostname="localhost" time="1.574" errors="0" tests="3" skipped="0" failures="0">
-  <testcase classname="browserName" name="can switch to iframe" time="1.567">
-  </testcase>
-  <testcase classname="browserName" name="can open URLs" time="0">
-  </testcase>
-  <testcase classname="browserName" name="can fork new driver instance" time="0">
+ <testsuite name="Expect" timestamp="2019-03-10T19:17:38" hostname="localhost" time="0.009" errors="0" tests="1" skipped="0" failures="1">
+  <testcase classname="Expect" name="should assert something" time="0.005">
+   <failure type="toContain" message="Expected &amp;apos;HELLO WORLD&amp;apos; to contain &amp;apos;TAM&amp;apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (C:\Users\Oleh\js_lessons\js_lessons\spec.js:136:31)
+    at C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new Promise (<anonymous>)
+    at SimpleScheduler.promise (C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2242:12)
+    at schedulerExecute (C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at promise (C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2232:22)
+    at new Promise (<anonymous>)
+    at SimpleScheduler.promise (C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2242:12)
+    at SimpleScheduler.execute (C:\Users\Oleh\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2227:17)]]>
+   </failure>
   </testcase>
  </testsuite>
- <testsuite name="Protractor searching" timestamp="2019-02-24T14:35:49" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+ <testsuite name="browserName" timestamp="2019-03-10T19:17:38" hostname="localhost" time="0.007" errors="0" tests="3" skipped="0" failures="0">
+  <testcase classname="browserName" name="can open URLs" time="0.001">
+  </testcase>
+  <testcase classname="browserName" name="can fork new driver instance" time="0.003">
+  </testcase>
+  <testcase classname="browserName" name="can switch to iframe" time="0">
+  </testcase>
+ </testsuite>
+ <testsuite name="Protractor searching" timestamp="2019-03-10T19:17:38" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
   <testcase classname="Protractor searching" name="should calculate the sum of two numbers" time="0">
+  </testcase>
+ </testsuite>
+ <testsuite name="Element finder" timestamp="2019-03-10T19:17:38" hostname="localhost" time="0.005" errors="0" tests="7" skipped="0" failures="0">
+  <testcase classname="Element finder" name="can be clicked" time="0">
+  </testcase>
+  <testcase classname="Element finder" name="can be checked for display" time="0.002">
+  </testcase>
+  <testcase classname="Element finder" name="can be checked for presence" time="0.001">
+  </testcase>
+  <testcase classname="Element finder" name="can send keys into it" time="0">
+  </testcase>
+  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0.001">
+  </testcase>
+  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0">
+  </testcase>
+  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0.001">
   </testcase>
  </testsuite>
 </testsuites>
