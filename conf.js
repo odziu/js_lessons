@@ -7,6 +7,8 @@ exports.config = {
     capabilities: {
         'browserName': 'chrome'
     },
+    directConnect: true,
+    chromeDriver: './node_modules/chromedriver/lib/chromedriver/chromedriver.exe',
     specs: ['spec.js'],
     framework: 'jasmine2' ,
     onPrepare: function() {

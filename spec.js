@@ -1,15 +1,27 @@
-// Do not need this:
+// Do not need this for JS, because it is a Type Script:
 // import {browser, element, By, $, $$, Key} from 'protractor'
 
-// describe('Protractor searching', () => {
-//     it('should calculate the sum of two numbers', async () => {
-//         await browser.get('');
-// 		let a = element.all(By.css('movie-card')).first();
-// 	});
-// });
+
+// Old School function syntax 
+describe('Expect', function () {
+    it('should assert something', function () {
+        expect('HELLO WORLD').toContain('WORLD')
+        // expect('HELLO WORLD').toContain('TAM')
+    })
+});
 
 describe('browserName', function () {
     it('can open URLs', async function () {
+        await browser.get('http://movies-finder.firebaseapp.com/')
+        console.time('sleep')
+        await browser.sleep(5000)
+        console.timeEnd('sleep')
+    });
+});
+
+// Arrow function
+describe('browserName', () => {
+    it('can open URLs', async () => {
         //await browser.waitForAngularEnabled(false)
         await browser.get('http://movies-finder.firebaseapp.com/')
 
@@ -18,7 +30,7 @@ describe('browserName', function () {
         console.timeEnd('sleep')
     });
     
-    it('can fork new driver instance', async function () {
+    it('can fork new driver instance', async () => {
         //await browser.waitForAngularEnabled(false)
         await browser.get('http://movies-finder.firebaseapp.com/')
 
@@ -47,15 +59,8 @@ describe('browserName', function () {
     });
 });
 
-describe('Protractor searching', () => {
-    it('should calculate the sum of two numbers', async () => {
-        await browser.get('http://movies-finder.firebaseapp.com/');
- 	});
-});
-
-
-describe('Element finder', function () {
-    it('can be clicked', async function () {
+describe('Element finder', () => {
+    it('can be clicked', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         // $$('[type="checkbox"]')
@@ -63,30 +68,30 @@ describe('Element finder', function () {
         await browser.sleep(3000)
     });
     
-    it('can be checked for display', async function () {
+    it('can be checked for display', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         await console.log(await $('NOT_EXISTING_ELEMENT').isDisplayed().then(null, err => false))
         await browser.sleep(3000)
     });
     
-    it('can be checked for presence', async function () {
+    it('can be checked for presence', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         await console.log(await $('NOT_EXISTING_ELEMENT').isPresent())
         await browser.sleep(3000)
     });
     
-    it('can send keys into it', async function () {
+    it('can send keys into it', async () => {
         // Key does not work
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/login')
         await $('#username').sendKeys('abc')
-        // await $('#usrrname').submit()
+        // await $('#username').submit()
         await browser.sleep(15000)
     });
     
-    it('can work with ElementArrayFinder', async function () {
+    it('can work with ElementArrayFinder', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         
@@ -95,14 +100,14 @@ describe('Element finder', function () {
         await browser.sleep(3000)
     });
 
-    it('can work with ElementArrayFinder', async function () {
+    it('can work with ElementArrayFinder', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         
         // Returns number of found elements
         console.log(await $$('[type="checkbox"]').count())
 
-        console.log(await $$('[type="checkbox"]').each(async (elem, index)=> {
+        console.log(await $$('[type="checkbox"]').each(async (elem, index) => {
             console.log(elem.isSelected(), 'INDEX:', index)
             if(!(await elem.isSelected())) {
                 await elem.click()
@@ -111,14 +116,14 @@ describe('Element finder', function () {
         }))
     });
 
-    it('can work with ElementArrayFinder', async function () {
+    it('can work with ElementArrayFinder', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
         
         // Returns number of found elements
         console.log(await $$('[type="checkbox"]').count())
 
-        console.log(await $$('[type="checkbox"]').map(async (elem, index)=> {
+        console.log(await $$('[type="checkbox"]').map(async (elem, index) => {
             console.log(elem.isSelected(), 'INDEX:', index)
             if(!(await elem.isSelected())) {
                 await elem.click()
@@ -130,23 +135,39 @@ describe('Element finder', function () {
     });
 });
 
-describe('Expect', function () {
-    it('should assert something', function () {
-        expect('HELLO WORLD').toContain('WORLD')
-        expect('HELLO WORLD').toContain('TAM')
-    })
-});
 
-describe('Movie card', async () => {
+describe('Movie card', () => {
     it('should have name', async () => {
+        await browser.get('http://movies-finder.firebaseapp.com/')
+        const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
+        await browser.wait(async () =>
+            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
+        );
+        expect(await movieTitle.getText()).toContain('Dilwale Dulhania Le Jayenge')
 
     });
 
     it('should have "rating" pointer', async () => {
-
+        const ratingPointer = element.all(by.xpath(`//small[@class='label label-success pull-right']`)).first();
+        await browser.get('http://movies-finder.firebaseapp.com/')
+        await browser.wait(async () =>
+            await ratingPointer.isPresent() && await ratingPointer.isDisplayed(), 5000, 'Cannot find Rating pointer'
+        );
+        expect(await ratingPointer.getText()).toContain('9.1')
     });
 
     it('should open appropriate "movie details" page, after click on "name" field', async () => {
-
+        const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
+        const pageTitle = element(by.css(`[class='col-md-8'] h2`));
+        await browser.get('http://movies-finder.firebaseapp.com/');
+        await browser.wait(async () => 
+            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
+        );
+        const savedTitle = await movieTitle.getText();
+        await movieTitle.click();
+        await browser.wait(async () =>
+            await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
+        );
+        expect(await pageTitle.getText()).toContain(savedTitle);
     });
 });

@@ -4,12 +4,19 @@
   "description": "000",
   "main": "conf.js",
   "dependencies": {
-    "eslint": "^5.14.1",
-    "jasmine-reporters": "^2.0.0"
+    "chromedriver": "^2.46.0",
+    "protractor": "~5.4.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "jasmine-reporters": "^2.0.0",
+    "jasmine2-reporter": "^0.2.0",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/protractor/built/cli.js ./conf.js",
+    "debug": "node --inspect=\"127.0.0.1:5858\" ./node_modules/.bin/protractor ./conf.js --seleniumAddress=\"http://localhost:4444/wd/hub\"",
+    "test-localselenium": "protractor ./conf.js --seleniumAddress=\"http://localhost:4444/wd/hub\""
   },
   "repository": {
     "type": "git",
