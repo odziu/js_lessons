@@ -119,10 +119,6 @@ describe('Element finder', () => {
     it('can work with ElementArrayFinder', async () => {
         await browser.waitForAngularEnabled(false)
         await browser.get('https://the-internet.herokuapp.com/checkboxes')
-        
-        // Returns number of found elements
-        console.log(await $$('[type="checkbox"]').count())
-
         console.log(await $$('[type="checkbox"]').map(async (elem, index) => {
             console.log(elem.isSelected(), 'INDEX:', index)
             if(!(await elem.isSelected())) {
