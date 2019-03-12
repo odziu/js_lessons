@@ -22,7 +22,6 @@ describe('browserName', function () {
 // Arrow function
 describe('browserName', () => {
     it('can open URLs', async () => {
-        //await browser.waitForAngularEnabled(false)
         await browser.get('http://movies-finder.firebaseapp.com/')
 
         console.time('sleep')
@@ -31,7 +30,6 @@ describe('browserName', () => {
     });
     
     it('can fork new driver instance', async () => {
-        //await browser.waitForAngularEnabled(false)
         await browser.get('http://movies-finder.firebaseapp.com/')
 
         let browser2 = await browser.forkNewDriverInstance().ready;
