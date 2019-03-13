@@ -174,6 +174,11 @@ describe('Search', () => {
         );
         await searchField.clear();
         await searchField.sendKeys('');
+        const movieTitle = element(by.xpath(''));
+        await browser.wait(async () => 
+            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find movie title'
+        );
+        expect(await movieTitle.getText()).toContain('');
 
     });
 });
