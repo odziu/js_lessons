@@ -138,7 +138,6 @@ describe('Movie card', () => {
             await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
         );
         expect(await movieTitle.getText()).toContain('Dilwale Dulhania Le Jayenge')
-
     });
 
     it('should have "rating" pointer', async () => {
@@ -163,5 +162,18 @@ describe('Movie card', () => {
             await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
         );
         expect(await pageTitle.getText()).toContain(savedTitle);
+    });
+});
+
+describe('Search', () => {
+    it('should search movie', async () => {
+        await browser.get('http://movies-finder.firebaseapp.com/');
+        const searchField = $('');
+        await browser.wait(async () =>
+            await searchField.isPresent() && await searchField.isDisplayed(), 5000, 'Cannot find search field'
+        );
+        await searchField.clear();
+        await searchField.sendKeys('');
+
     });
 });
