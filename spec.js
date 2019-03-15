@@ -29,6 +29,17 @@ describe('browserName', () => {
         console.timeEnd('sleep')
     });
     
+    fit('Should return elements by css', async () => {
+        await browser.get('/');
+        let a = element.all(by.css('movie-card')).first()
+        let b = $('movie-card') // the same as element(by.css('movie-card'))
+        let c = $$('movie-card').last()
+
+        console.log(await a.getText())
+        console.log(await b.getText())
+        console.log(await c.getText())
+    })
+
     it('can fork new driver instance', async () => {
         await browser.get('http://movies-finder.firebaseapp.com/')
 
@@ -182,3 +193,4 @@ describe('Search', () => {
 
     });
 });
+

@@ -9,7 +9,7 @@ exports.config = {
     },
     directConnect: true,
     chromeDriver: './node_modules/chromedriver/lib/chromedriver/chromedriver.exe',
-    specs: ['spec.js'],
+    specs: ['spec.js', 'parsing.js'],
     framework: 'jasmine2' ,
     onPrepare: function() {
         let jasmineReporters = require('jasmine-reporters');
