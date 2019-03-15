@@ -29,7 +29,7 @@ describe('browserName', () => {
         console.timeEnd('sleep')
     });
     
-    fit('Should return elements by css', async () => {
+    it('Should return elements by css', async () => {
         await browser.get('/');
         let a = element.all(by.css('movie-card')).first()
         let b = $('movie-card') // the same as element(by.css('movie-card'))
@@ -176,21 +176,31 @@ describe('Movie card', () => {
     });
 });
 
-describe('Search', () => {
-    it('should search movie', async () => {
-        await browser.get('http://movies-finder.firebaseapp.com/');
-        const searchField = $('');
-        await browser.wait(async () =>
-            await searchField.isPresent() && await searchField.isDisplayed(), 5000, 'Cannot find search field'
-        );
-        await searchField.clear();
-        await searchField.sendKeys('');
-        const movieTitle = element(by.xpath(''));
-        await browser.wait(async () => 
-            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find movie title'
-        );
-        expect(await movieTitle.getText()).toContain('');
+// describe('Search', () => {
+//     it('should search movie', async () => {
+//         await browser.get('http://movies-finder.firebaseapp.com/');
+//         const searchField = $('');
+//         await browser.wait(async () =>
+//             await searchField.isPresent() && await searchField.isDisplayed(), 5000, 'Cannot find search field'
+//         );
+//         await searchField.clear();
+//         await searchField.sendKeys('');
+//         const movieTitle = element(by.xpath(''));
+//         await browser.wait(async () => 
+//             await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find movie title'
+//         );
+//         expect(await movieTitle.getText()).toContain('');
+//     });
+// });
 
-    });
-});
-
+describe('Waits', () => {
+    fit('implicit wait should wait for element to be present', async () => {
+        // 'implicit wait' waits for element presence
+        await browser.manage().timeouts().implicitlyWait(10000)
+        await browser.waitForAngularEnabled(false)
+        await browser.get('https://the-internet.herokuapp.com/dynamic_loading/2')
+        await $('#start button').click()
+        // 10 sec waiting
+        console.log(await $('#finish h4').getText())
+    })
+})
