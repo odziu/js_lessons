@@ -266,4 +266,71 @@ describe('Waits', () => {
         // await browser.wait(EC.not(purchaseIsCompletedSuccessfully), 20000)
         console.log(await $('#finish h4').getText())
     })
+
+    it('explicit wait should iteract with implicit wait very strange', async () => {
+        await browser.manage().timeouts().implicitlyWait(9000)
+        await browser.waitForAngularEnabled(false)
+        await browser.get('https://the-internet.herokuapp.com/dynamic_loading/2')
+        // await $('#start button').click()
+        // 20 sec waiting
+        let i = 0
+        await browser.wait(async () => {
+            console.log(i)
+            i++
+            return EC.visibilityOf($('#finish h4'))()
+            // Dirty hack abow
+        },
+        20000, 'result should appear in 20 seconds, but it does not')
+    })
+})
+
+describe('Movie details', () => {
+    fit('should have movie name as header', async () => {
+        const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
+        const pageTitle = element(by.css(`[class='col-md-8'] h2`));
+        await browser.get('http://movies-finder.firebaseapp.com/');
+        await browser.wait(async () => 
+            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
+        );
+        const savedTitle = await movieTitle.getText();
+        await movieTitle.click();
+        await browser.wait(async () =>
+            await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
+        );
+        expect(await pageTitle.getText()).toContain(savedTitle);
+    })
+
+    it('should have raiting', async () => {
+
+    })
+
+    it('should have simular movie block with at least one movie', async () => {
+        
+    })
+
+    describe('cast block', () => {
+        it('should show at least one actor', async () => {
+
+        })
+    })
+
+    describe('reviews block', () => {
+        it('should be atleast one review', async () => {
+
+        })
+
+        it('should have reviewer name as link to source', async () => {
+
+        })
+    })
+
+    describe('Popular series', () => {
+        it('should not have search bar', async () => {
+
+        })
+
+        it('should have "First Air Date" instead "Release Date"', async () => {
+
+        })
+    })
 })
