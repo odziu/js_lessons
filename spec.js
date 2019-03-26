@@ -285,7 +285,7 @@ describe('Waits', () => {
 })
 
 describe('Movie details', () => {
-    fit('should have movie name as header', async () => {
+    it('should have movie name as header', async () => {
         const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
         const pageTitle = element(by.css(`[class='col-md-8'] h2`));
         await browser.get('http://movies-finder.firebaseapp.com/');
@@ -300,11 +300,11 @@ describe('Movie details', () => {
         expect(await pageTitle.getText()).toContain(savedTitle);
     })
 
-    it('should have raiting', async () => {
+    it('should have rating', async () => {
 
     })
 
-    it('should have simular movie block with at least one movie', async () => {
+    it('should have similar movie block with at least one movie', async () => {
         
     })
 
@@ -315,12 +315,37 @@ describe('Movie details', () => {
     })
 
     describe('reviews block', () => {
-        it('should be atleast one review', async () => {
-
+        beforeEach(async () => {
+            const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
+            const pageTitle = element(by.css(`[class='col-md-8'] h2`));
+            await browser.get('http://movies-finder.firebaseapp.com/');
+            await browser.wait(async () => 
+                await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
+            );
+            await movieTitle.click();
+            await browser.wait(async () =>
+                await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
+            );
+        })
+        
+        it('should be at least one review', async () => {
+            expect(await $('cite').getText()).toContain(savedTitle);
         })
 
-        it('should have reviewer name as link to source', async () => {
+        fit('should have reviewer name as link to source', async () => {
+            
+            // xpath
+            //app-root/div/div[@class='row']/div[2]/app-movie//cite[@title='futuretv']/a[@href='https://www.themoviedb.org/review/5346fa840e0a265ffa001e20']
+            //cite[@title='futuretv']/a
+            //cite
+            console.log(await $('cite').getText())
 
+            // const reviewer = await $('cite').getText()
+            // await $('cite').click()
+            // await browser.wait(async () => {
+            //     await
+            // })
+            
         })
     })
 
