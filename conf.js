@@ -9,8 +9,12 @@ exports.config = {
     },
     directConnect: true,
     chromeDriver: './node_modules/chromedriver/lib/chromedriver/chromedriver.exe',
-    // specs: ['spec.js', 'parsing.js'],
-    specs: ['spec.js'],
+    // specs: ['spec.js', 'parsing.js', 'movie_finder/movie_card_spec.js', 'movie_finder/movie_details_spec.js'],
+    suites: {
+        full: [
+            'specs/*_specs/*_spec.js'
+        ]
+    },
     framework: 'jasmine2' ,
     onPrepare: function() {
         let jasmineReporters = require('jasmine-reporters');
