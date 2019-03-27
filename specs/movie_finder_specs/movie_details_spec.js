@@ -1,3 +1,5 @@
+// +++++++ Video #5 Homework +++++++ 
+
 const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
 const pageTitle = element(by.css(`[class='col-md-8'] h2`));
 

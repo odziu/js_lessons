@@ -1,3 +1,4 @@
+// +++++++ Video #5 +++++++ 
 describe('Waits', () => {
     beforeEach(async () => {
         await browser.manage().timeouts().implicitlyWait(0)

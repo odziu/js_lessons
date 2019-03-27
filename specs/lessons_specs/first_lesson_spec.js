@@ -3,14 +3,14 @@
 
 
 // Old School function syntax 
-xdescribe('Expect', function () {
+describe('Expect', function () {
     it('should assert something', function () {
         expect('HELLO WORLD').toContain('WORLD')
         // expect('HELLO WORLD').toContain('TAM')
     })
 });
 
-xdescribe('browserName', function () {
+describe('browserName', function () {
     it('can open URLs', async function () {
         await browser.get('http://movies-finder.firebaseapp.com/')
         console.time('sleep')
@@ -20,7 +20,7 @@ xdescribe('browserName', function () {
 });
 
 // Arrow function
-xdescribe('browserName', () => {
+describe('browserName', () => {
     it('can open URLs', async () => {
         await browser.get('http://movies-finder.firebaseapp.com/')
 

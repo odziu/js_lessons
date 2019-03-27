@@ -1,7 +1,7 @@
 // require('ts-node').register();
 
 exports.config = {
-      // seleniumAddress: 'http://localhost:4444/wd/hub',
+    // seleniumAddress: 'http://localhost:4444/wd/hub',
     baseUrl: 'http://movies-finder.firebaseapp.com/',
     SELENIUM_PROMISE_MANAGER: false, // but we still use this piece of shit
     capabilities: {
