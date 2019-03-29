@@ -45,7 +45,7 @@ describe('Movie details', () => {
             );
         })
         
-        fit('should be at least one review', async () => {
+        it('should be at least one review', async () => {
             expect(await $('.text-justify').isPresent() && await $('.text-justify').isDisplayed());
             console.log(await $('.text-justify').getText());
         })
