@@ -28,6 +28,10 @@ describe('Movie details', () => {
     })
 
     it('should have similar movie block with at least one movie', async () => {
+        await movieTitle.click();
+        await browser.wait(async () =>
+            await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
+        );
         
     })
 
