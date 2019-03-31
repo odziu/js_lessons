@@ -11,7 +11,7 @@ describe('Movie card', () => {
             await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
         );
     })
-    fit('should have name', async () => {
+    it('should have name', async () => {
         expect(await movieTitle.getText()).toContain('Dilwale Dulhania Le Jayenge');
     });
 
