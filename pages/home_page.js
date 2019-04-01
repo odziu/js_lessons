@@ -2,6 +2,7 @@ const searchField = $('input[name="searchStr"]');
 // const foundMovies = $$('movies > div > div.row.is-flex movie-card');
 const foundMovies = element(by.xpath(`//div[@class='caption']/h4[@class='text-ellipsis']`))
 const goBtn = $('.input-group-btn [type]');
+var EC = protractor.ExpectedConditions;
 
 class HomePage {
         
@@ -18,7 +19,8 @@ class HomePage {
 
     async getFoundMovies() {
         // await browser.sleep(5000);
-        await browser.wait(EC.visibilityOf(this.foundMovies.first()), 5000), 'Movies not loaded.';
+        // await browser.wait(EC.visibilityOf(this.foundMovies.first()), 5000), 'Movies not loaded.';
+        await browser.wait(EC.visibilityOf(this.foundMovies), 5000), 'Movies not loaded.';
         return this.foundMovies;
     };
 
@@ -27,3 +29,5 @@ class HomePage {
         return (await this.getFoundMovies()).getAttribute('title')
     };
 };
+
+module.exports = HomePage;

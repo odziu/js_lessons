@@ -26,7 +26,7 @@ describe('Model Pattern', () => {
     //     }
     // };
 
-    // fit('can be created for data from page', async () => {
+    // it('can be created for data from page', async () => {
     //     await browser.get('https://movies-finder.firebaseapp.com/movie/278');
     //     await browser.sleep(1500);
         
