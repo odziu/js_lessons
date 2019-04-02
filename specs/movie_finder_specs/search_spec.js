@@ -1,33 +1,15 @@
 // +++++++ Video #6 Lesson +++++++ 
-// const searchField = $('input[name="searchStr"]');
 // // const foundMovies = $$('movies > div > div.row.is-flex movie-card');
 // const foundMovies = element(by.xpath(`//div[@class='caption']/h4[@class='text-ellipsis']`))
-// const goBtn = $('.input-group-btn [type]');
-// const homePage = new HomePage()
 
 const HomePage = require('../../pages/home_page.js');
 const homePage = new HomePage();
 
 describe('Search', () => {
-        
     beforeEach(async () => {
         await homePage.open();
     })
     
-    it('should search movie', async () => {
-        // const searchField = $('');
-        // await browser.wait(async () =>
-        //     await searchField.isPresent() && await searchField.isDisplayed(), 5000, 'Cannot find search field'
-        // );
-        // await searchField.clear();
-        // await searchField.sendKeys('');
-        // const movieTitle = element(by.xpath(''));
-        // await browser.wait(async () => 
-        //     await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find movie title'
-        // );
-        // expect(await movieTitle.getText()).toContain('');
-    });
-
     it('by existing name, should show first movie with', async () => {
         const search_request = 'Dreams';
         await homePage.searchFor(search_request);
@@ -53,6 +35,15 @@ describe('Search', () => {
         expect(titles.length).toBe(20, 'Number of found movies should be 20');
         // titles.forEach(title => expect(title).toContain(search_request))
     });
-});
 
-// Difference with american culture. It is difficult to understand does customer really satisfied your work. When you show demo client always say that everything is OK. 
+    it('should search movie', async () => {
+        // await browser.wait(async () =>
+        //     await searchField.isPresent() && await searchField.isDisplayed(), 5000, 'Cannot find search field'
+        // );
+        // const movieTitle = element(by.xpath(''));
+        // await browser.wait(async () => 
+        //     await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find movie title'
+        // );
+        // expect(await movieTitle.getText()).toContain('');
+    });
+}); 

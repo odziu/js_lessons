@@ -3,20 +3,17 @@
 const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
 const pageTitle = element(by.css(`[class='col-md-8'] h2`));
 
+const HomePage = require('../../pages/home_page.js');
+const homePage = new HomePage();
+
 describe('Movie details', () => {
     beforeEach(async () => {
-        await browser.get('http://movies-finder.firebaseapp.com/');
-        await browser.wait(async () => 
-            await movieTitle.isPresent() && await movieTitle.isDisplayed(), 5000, 'Cannot find element'
-        );
-    })
+        await homePage.open();
+    });
 
     it('should have movie name as header', async () => {
         const savedTitle = await movieTitle.getText();
-        await movieTitle.click();
-        await browser.wait(async () =>
-            await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
-        );
+        await homePage.clickOnMovie();
         expect(await pageTitle.getText()).toContain(savedTitle);
     })
 
@@ -24,29 +21,22 @@ describe('Movie details', () => {
         const movieRating = await $('.label-warning');
         expect(movieRating.isPresent() && movieRating.isDisplayed());
         // !!! Should edit this:
-        console.log('Movie rating:', movieRating.getText());
+        // console.log('Movie rating:', movieRating.getText());
     })
 
     it('should have similar movie block with at least one movie', async () => {
-        await movieTitle.click();
-        await browser.wait(async () =>
-            await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
-        );
-        
+        await homePage.clickOnMovie();
     })
 
     describe('cast block', () => {
         it('should show at least one actor', async () => {
-
+            await homePage.clickOnMovie();
         })
     })
 
     describe('reviews block', () => {
         beforeEach(async () => {
-            await movieTitle.click();
-            await browser.wait(async () =>
-                await pageTitle.isPresent(), 5000, 'Element is not present => Appropriate page is not downloaded'
-            );
+            await homePage.clickOnMovie();
         })
         
         it('should be at least one review', async () => {
@@ -62,16 +52,6 @@ describe('Movie details', () => {
             console.log(await element(by.xpath('//cite//a[@href]')).getText());
             // const reviewer = await $('cite').getText();
             // await $('cite').click();
-
-        })
-    })
-
-    describe('Popular series', () => {
-        it('should not have search bar', async () => {
-
-        })
-
-        it('should have "First Air Date" instead "Release Date"', async () => {
 
         })
     })
