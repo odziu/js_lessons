@@ -1,65 +1,53 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="Movie details" timestamp="2019-04-02T17:48:50" hostname="localhost" time="2.776" errors="0" tests="3" skipped="0" failures="0">
-  <testcase classname="Movie details" name="should have rating" time="2.77">
+ <testsuite name="ASYNC code" timestamp="2019-04-13T17:26:14" hostname="localhost" time="2.792" errors="0" tests="2" skipped="0" failures="0">
+  <testcase classname="ASYNC code" name="promises can be used for protractor synchronization" time="2.785">
   </testcase>
-  <testcase classname="Movie details" name="should have movie name as header" time="0">
-  </testcase>
-  <testcase classname="Movie details" name="should have similar movie block with at least one movie" time="0">
+  <testcase classname="ASYNC code" name="can work with callbacks" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="Movie details.cast block" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
-  <testcase classname="Movie details.cast block" name="should show at least one actor" time="0">
-  </testcase>
- </testsuite>
- <testsuite name="Movie details.reviews block" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.001" errors="0" tests="2" skipped="0" failures="0">
-  <testcase classname="Movie details.reviews block" name="should be at least one review" time="0">
-  </testcase>
-  <testcase classname="Movie details.reviews block" name="should have reviewer name as link to source" time="0.001">
-  </testcase>
- </testsuite>
- <testsuite name="Element finder" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.008" errors="0" tests="7" skipped="0" failures="0">
-  <testcase classname="Element finder" name="can be clicked" time="0.002">
+ <testsuite name="Element finder" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.011" errors="0" tests="7" skipped="0" failures="0">
+  <testcase classname="Element finder" name="can be clicked" time="0">
   </testcase>
   <testcase classname="Element finder" name="can be checked for display" time="0.002">
   </testcase>
-  <testcase classname="Element finder" name="can be checked for presence" time="0">
+  <testcase classname="Element finder" name="can be checked for presence" time="0.001">
   </testcase>
   <testcase classname="Element finder" name="can send keys into it" time="0">
   </testcase>
-  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0.001">
+  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0">
   </testcase>
   <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0">
   </testcase>
-  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0.002">
+  <testcase classname="Element finder" name="can work with ElementArrayFinder" time="0.004">
   </testcase>
  </testsuite>
- <testsuite name="Expect" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+ <testsuite name="Expect" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.003" errors="0" tests="1" skipped="0" failures="0">
   <testcase classname="Expect" name="should assert something" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="browserName" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.006" errors="0" tests="1" skipped="0" failures="0">
-  <testcase classname="browserName" name="can open URLs" time="0.006">
+ <testsuite name="browserName" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+  <testcase classname="browserName" name="can open URLs" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="browserName" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.02" errors="0" tests="4" skipped="0" failures="0">
+ <testsuite name="browserName" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.013" errors="0" tests="4" skipped="0" failures="0">
   <testcase classname="browserName" name="can open URLs" time="0">
   </testcase>
-  <testcase classname="browserName" name="Should return elements by css" time="0.001">
+  <testcase classname="browserName" name="Should return elements by css" time="0">
   </testcase>
-  <testcase classname="browserName" name="can fork new driver instance" time="0.003">
+  <testcase classname="browserName" name="can fork new driver instance" time="0">
   </testcase>
   <testcase classname="browserName" name="can switch to iframe" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="Lazy Elements" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+ <testsuite name="Lazy Elements" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
   <testcase classname="Lazy Elements" name="should not be searced if no manipulations" time="0">
   </testcase>
  </testsuite>
- <testsuite name="parent DESCRIBE block" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.029" errors="0" tests="5" skipped="0" failures="0">
+ <testsuite name="parent DESCRIBE block" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.01" errors="0" tests="5" skipped="0" failures="0">
   <testcase classname="parent DESCRIBE block" name="4 TEST for 1" time="0.001">
   </testcase>
-  <testcase classname="parent DESCRIBE block" name="5 TEST for 2" time="0.001">
+  <testcase classname="parent DESCRIBE block" name="5 TEST for 2" time="0">
   </testcase>
   <testcase classname="parent DESCRIBE block" name="6 TEST for 3" time="0">
   </testcase>
@@ -68,43 +56,61 @@
   <testcase classname="parent DESCRIBE block" name="8 TEST for 5" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="parent DESCRIBE block.Nested describe block" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.004" errors="0" tests="1" skipped="0" failures="0">
+ <testsuite name="parent DESCRIBE block.Nested describe block" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.002" errors="0" tests="1" skipped="0" failures="0">
   <testcase classname="parent DESCRIBE block.Nested describe block" name="NESTED TEST" time="0.001">
   </testcase>
  </testsuite>
- <testsuite name="Waits" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.005" errors="0" tests="6" skipped="0" failures="0">
+ <testsuite name="Waits" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.009" errors="0" tests="6" skipped="0" failures="0">
   <testcase classname="Waits" name="implicit wait should wait for element to be present" time="0">
   </testcase>
   <testcase classname="Waits" name="explicit wait should wait for element to be present" time="0.001">
   </testcase>
-  <testcase classname="Waits" name="explicit wait should wait for element to be didplayed" time="0">
-  </testcase>
-  <testcase classname="Waits" name="explicit wait should wait for element to be didplayed" time="0.003">
+  <testcase classname="Waits" name="explicit wait should wait for element to be didplayed" time="0.001">
   </testcase>
   <testcase classname="Waits" name="explicit wait should wait for element to be didplayed" time="0">
+  </testcase>
+  <testcase classname="Waits" name="explicit wait should wait for element to be didplayed" time="0.001">
   </testcase>
   <testcase classname="Waits" name="explicit wait should iteract with implicit wait very strange" time="0">
   </testcase>
  </testsuite>
- <testsuite name="Movie card" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.003" errors="0" tests="3" skipped="0" failures="0">
-  <testcase classname="Movie card" name="should have name" time="0.003">
+ <testsuite name="Movie card" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.012" errors="0" tests="3" skipped="0" failures="0">
+  <testcase classname="Movie card" name="should have name" time="0">
   </testcase>
   <testcase classname="Movie card" name="should have &amp;quot;rating&amp;quot; pointer" time="0">
   </testcase>
-  <testcase classname="Movie card" name="should open appropriate &amp;quot;movie details&amp;quot; page, after click on &amp;quot;name&amp;quot; field" time="0">
+  <testcase classname="Movie card" name="should open appropriate &amp;quot;movie details&amp;quot; page, after click on &amp;quot;name&amp;quot; field" time="0.002">
   </testcase>
  </testsuite>
- <testsuite name="Search" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.003" errors="0" tests="4" skipped="0" failures="0">
-  <testcase classname="Search" name="should search movie" time="0">
+ <testsuite name="Movie details" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.012" errors="0" tests="3" skipped="0" failures="0">
+  <testcase classname="Movie details" name="should have movie name as header" time="0">
   </testcase>
+  <testcase classname="Movie details" name="should have rating" time="0">
+  </testcase>
+  <testcase classname="Movie details" name="should have similar movie block with at least one movie" time="0">
+  </testcase>
+ </testsuite>
+ <testsuite name="Movie details.cast block" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.001" errors="0" tests="1" skipped="0" failures="0">
+  <testcase classname="Movie details.cast block" name="should show at least one actor" time="0.001">
+  </testcase>
+ </testsuite>
+ <testsuite name="Movie details.reviews block" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.002" errors="0" tests="2" skipped="0" failures="0">
+  <testcase classname="Movie details.reviews block" name="should be at least one review" time="0.001">
+  </testcase>
+  <testcase classname="Movie details.reviews block" name="should have reviewer name as link to source" time="0">
+  </testcase>
+ </testsuite>
+ <testsuite name="Search" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.005" errors="0" tests="4" skipped="0" failures="0">
   <testcase classname="Search" name="by existing name, should show first movie with" time="0.001">
   </testcase>
-  <testcase classname="Search" name="results(all of them) should contain search request" time="0.002">
+  <testcase classname="Search" name="results(all of them) should contain search request" time="0.001">
   </testcase>
-  <testcase classname="Search" name="result should be empty, after request for nonexistent movie" time="0">
+  <testcase classname="Search" name="result should be empty, after request for nonexistent movie" time="0.001">
+  </testcase>
+  <testcase classname="Search" name="should search movie" time="0">
   </testcase>
  </testsuite>
- <testsuite name="Popular series" timestamp="2019-04-02T17:48:53" hostname="localhost" time="0.001" errors="0" tests="2" skipped="0" failures="0">
+ <testsuite name="Popular series" timestamp="2019-04-13T17:26:17" hostname="localhost" time="0.002" errors="0" tests="2" skipped="0" failures="0">
   <testcase classname="Popular series" name="should not have search bar" time="0.001">
   </testcase>
   <testcase classname="Popular series" name="should have &amp;quot;First Air Date&amp;quot; instead &amp;quot;Release Date&amp;quot;" time="0">
