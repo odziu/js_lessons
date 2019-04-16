@@ -8,6 +8,7 @@ var EC = protractor.ExpectedConditions;
 const movieTitle = element(by.xpath('//div[2]/movies/div[2]/div[1]/movie-card//a[@title]'));
 const pageTitle = element(by.css(`[class='col-md-8'] h2`));
 
+
 class HomePage {
         
     async open() {
@@ -26,7 +27,7 @@ class HomePage {
 
     async searchFor(searchRequest) {
         // !!!! should learn this:
-        // await searchField.sendKeys(searchRequest, Key.ENTER);
+        // await searchField.sendKeys(searchRequest, protractor.Key.ENTER);
         await searchField.clear();
         await searchField.sendKeys(searchRequest);
         await goBtn.click();
