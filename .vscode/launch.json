@@ -9,15 +9,16 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            // "program": "${workspaceFolder}\\conf.js",
-            "program": "${workspaceFolder}/node_modules/.bin/protractor",
+            "program": "${workspaceRoot}/node_modules/protractor/bin/protractor",
+            "stopOnEntry": false,
             "args": [
-                ".jsminejs/conf.js"
+                "${workspaceRoot}/conf.js"
             ],
             "protocol": "inspector",
-            "sourceMaps": true,
             "console": "internalConsole",
-            "outputCapture": "std"
+            "outputCapture": "std",
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
         }
     ]
 }
