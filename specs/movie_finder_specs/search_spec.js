@@ -11,8 +11,9 @@ describe('Search', () => {
     })
     
     it('by existing name, should show first movie with', async () => {
-        const search_request = 'Dreams';
-        await homePage.searchFor(search_request);
+        // const search_request = 'Dreams';
+        // await homePage.searchFor(search_request);
+        await homePage.searchFor('Dreams');
         
         // await homePage.foundMovies.click();
     });
