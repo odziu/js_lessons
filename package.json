@@ -5,6 +5,8 @@
   "main": "conf.js",
   "dependencies": {
     "chromedriver": "^2.46.0",
+    "log4js": "^4.1.0",
+    "log4js-protractor-appender": "^1.1.2",
     "protractor": "~5.4.2"
   },
   "devDependencies": {

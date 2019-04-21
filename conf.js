@@ -1,5 +1,3 @@
-// require('ts-node').register();
-
 exports.config = {
     // seleniumAddress: 'http://localhost:4444/wd/hub',
     baseUrl: 'http://movies-finder.firebaseapp.com/',
@@ -15,8 +13,13 @@ exports.config = {
             'specs/*_specs/*_spec.js'
         ]
     },
-    framework: 'jasmine2' ,
+    framework: 'jasmine2',
     onPrepare: function() {
+        let log4js = require('log4js');
+        logger = log4js.getLogger('ConfigLogger');
+        // is it works?
+        logger.info('On prepare started');
+        logger.level = 'debug';
         let jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter(null, true, true)
         );
