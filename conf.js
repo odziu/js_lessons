@@ -19,7 +19,8 @@ exports.config = {
         logger = log4js.getLogger('ConfigLogger');
         // is it works?
         logger.info('On prepare started');
-        logger.level = 'debug';
+        // logger.level = 'debug';
+        logger.level = 'trace';
         let jasmineReporters = require('jasmine-reporters');
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter(null, true, true)
         );
