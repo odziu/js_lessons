@@ -3,7 +3,7 @@ describe('Lazy Elements', () => {
     let button = $('#checkbox-example [autocomplete]');
     var EC = protractor.ExpectedConditions;
 
-    it('should not be searced if no manipulations', async () => {
+    it('should not be searched if no manipulations', async () => {
         await browser.waitForAngularEnabled(false);
         await browser.get('https://the-internet.herokuapp.com/dynamic_controls');
 

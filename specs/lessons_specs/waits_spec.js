@@ -33,7 +33,7 @@ describe('Waits', () => {
     //-------Expected conditions------
     var EC = protractor.ExpectedConditions;
 
-    it('explicit wait should wait for element to be didplayed', async () => {
+    it('explicit wait should wait for element to be displayed', async () => {
         // await browser.manage().timeouts().implicitlyWait(10000)
         await browser.waitForAngularEnabled(false);
         await browser.get('https://the-internet.herokuapp.com/dynamic_loading/2');
@@ -43,7 +43,7 @@ describe('Waits', () => {
         console.log(await $('#finish h4').getText());
     })
 
-    it('explicit wait should wait for element to be didplayed', async () => {
+    it('explicit wait should wait for element to be displayed', async () => {
         // await browser.manage().timeouts().implicitlyWait(10000)
         await browser.waitForAngularEnabled(false);
         await browser.get('https://the-internet.herokuapp.com/dynamic_loading/2');
